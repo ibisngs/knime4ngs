@@ -322,7 +322,8 @@ Full-Width Styles
   bottom: -40px;
   right: 0;
   height: 70px;
-  background: url('../images/icon_download.png') no-repeat 0% 90%;
+  /*background: url('../images/icon_download.png') no-repeat 0% 90%;*/
+  background: none;
 }
 
 .zip_download_link {
@@ -332,9 +333,8 @@ Full-Width Styles
   height:70px;
   text-indent: -5000px;
   overflow: hidden;
-  /*background: url(../images/sprite_download.png) no-repeat bottom left; */
-  background: none;
-}
+  background: url(../images/sprite_download.png) no-repeat bottom left;
+  }
 
 .tar_download_link {
   display: block;
