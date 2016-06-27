@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Knime4NGS : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Knime4NGS</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+         <!-- <a id="forkme_banner" href="https://github.com/ibisngs/knime4ngs">View on GitHub</a> -->
+
+          <h1 id="project_title">Knime4NGS</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+            <!--  <a class="zip_download_link" href="https://github.com/ibisngs/knime4ngs/raw/master/resource-bundle.tar.gz">Download this project as a .zip file</a> -->
+              <!--<a class="tar_download_link" href="https://github.com/ibisngs/knime4ngs/tarball/master">Download this project as a tar.gz file</a> -->
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+<strong>Knime4NGS</strong> is a set of custom KNIME nodes, designed for 
+
+
+
+	<h2 id="QuickStart">Quick Start</h2>
+		<section>
+			<h3 class='nodent'>Download and Install Nodes</h3>
+				<p>You can download and install the KNIME4NGS nodes by specifying the KNIME4NGS Update Site within KNIME <strong>http://ibisngs.github.io/knime4ngs/updateSite</strong>.</p> 
+				<p>Add the new site using Help > Install New Software > Available Software Sites preference page.</p>
+				<h3 class='nodent'>Prerequisites</h3>
+
+				<ul type="square">
+    					<li>Linux OS (required)</li>				 
+					<li><a href="https://www.knime.org/downloads/overview">KNIME or KNIME SDK</a>  (required)</li>	
+    					<li><a href="https://www.knime.org/knime-cluster-executor">KNIME Cluster Extension</a> (recommended)</li>
+   					<li>KNIME Virtual Nodes Extension (for parallel execution only) </li>
+				</ul>
+
+				<h5 class='nodent'>Specific prerequisites required for certain nodes</h5>
+				<ul type="square">
+    					<li>R packages: gplots, ggplot2, reshape, gsalib; for RNA-Seq pipelines: argparse, edgeR, DESeq, Biobase and limma</li>
+    					<li><a href="http://www.ensembl.org/info/docs/tools/vep/index.html">Variant Effect Predictor (VEP)</a> script including the Ensembl Core and Variation APIs
+(for variant annotation, see Section 2.6) 3 VEP itself requires the following perl modules:
+Archive::Extract, Archive::Zip, Test::More, DBI and CGI</li>
+				</ul>
+
+				<h3 class='nodent'>Configuration (recommended)</h3>
+				Our nodes can be configured by using the KNIME4NGS preference page. Setting the required file paths will speed up workflow creation and node configuration.
+				The KNIME4NGS Preference Page can be found at:
+				<pre>File –> Preferences –> KNIME –> KNIME4NGS.</pre>
+				Missing binaries can be obtained by using ’Download missing binaries’ and/or search
+				for existing binaries in your file system. This step is necessary since most nodes
+				do not contain the respective execution binaries. Although binaries can be selected
+				in each node independently, setting global binary paths in the preference page is
+				recommended.
+
+				<h3 class='nodent'>Test Installation</h3>
+				For testing the functionalit, we provide two example workflows.....TODO
+
+				<h3 class='nodent'>Documentation</h3>
+				A comprehensive documentaion including detailed descriptions and examples can be found here.
+      </section>
+
+
+
+
+	<h2 id="FAQs">FAQs</h2>
+	      	<section>
+			<ol type="1">
+
+<li> <p><strong>Which nodes can work on compressed input files?</strong></p>
+<p>–> Compatible with compressed FastQ files: FastQC, RawReadManipulator</p>
+<p>–> Compatible with compressed vcf files: VEP</p></li>
+
+<li> <p><strong>No active session error in parallel chunk environment.</strong></p>
+–> Reset parallel chunk start and re-execute.</p></li>
+
+<li> <p><strong>The node wont execute and always returns to "orange configure-state" without
+error message.</strong></p>
+<p>–> Reset the last successfully executed predecessor node and re-execute the nodes.</p></li>
+
+<li> <p><strong>Update has encountered a problem.</strong></p>
+–> Restart KNIME before updating.</p></li>
+
+<!--<li> <p><strong>GC overhead limit exceeded while running Picard node.</strong></p>
+–> Increase memory when starting KNIME using the knime.ini file e.g. by adding -Xmx8G</p></li>-->
+
+<li> <p><strong> Node is in EXECUTING state and cannot be canceled although it has been
+successfully executed on the cluster.</strong></p>
+<p>–> Go to the corresponding workflow folder in the knime-workspace. Edit the xml file of
+the executing node and replace EXECUTING by IDLE or CONFIGURED.</p></li>
+
+<li> <p><strong> VQSR: Unable to retrieve results.</strong></p>
+<p>–> Use VQSR in single-threaded mode (Threads 1).</p></li>
+
+<li> <p><strong> VQSR: No data found.</strong></p>
+<p>–> Reduce maximum number of Gaussians to 4.</p></li>
+			</ol>
+                </section>
+
+
+<h2 class='nodent'>Contact</h2>
+	<section>
+		mail@mail.de
+	</section>
+
+
+
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Knime4NGS maintained by <a href="https://github.com/ibisngs">ibisngs</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
