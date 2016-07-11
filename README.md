@@ -13,9 +13,9 @@ The files have been generated based on the Platinum Genomes offered by Illumina.
 For more information visit the [Platinum Genomes website](http://www.illumina.com/platinumgenomes/) and for raw data see the [ENA entry ERP001960](http://www.ebi.ac.uk/ena/data/view/ERP001960).
 
 **RefGenome**
-The folder contains chromosome 16 of the human reference genome provided by [UCSC](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/).
+The folder contains chromosome 16 of the human reference genome (GRCh37) provided by [UCSC](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/).
 Besides the main FastA file, we provide the index file and the corresponding sequencing dictionary.
 
 **VariantSets**
 The folder contains VCF files serving as databases of known polymorphic sites required by the GATKRealignment and the GATKBaseRecalibration nodes.
-For more information see the [GATK documentation on known variants/sites](https://www.broadinstitute.org/gatk/guide/article?id=1247).
+For more information see the [GATK documentation on how to use known variant sets](https://www.broadinstitute.org/gatk/guide/article?id=1247).
