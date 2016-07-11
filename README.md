@@ -8,8 +8,14 @@ For more description of the experiment see the [PubMed entry 24926665](http://ww
 - Homo_sapiens.GRCh37.75.chr16.gtf.gz: Annotation file needed for the FeatureCounts node.
 
 **Exome_VarCal**
+The folder contains the FastQ files which serve as input for the KNIME4NGS\_Exome\_VarCal workflow.
+The files have been generated based on the Platinum Genomes offered by Illumina.
+For more information visit the [Platinum Genomes website](http://www.illumina.com/platinumgenomes/) and for raw data see the [ENA entry ERP001960](http://www.ebi.ac.uk/ena/data/view/ERP001960).
 
 **RefGenome**
+The folder contains chromosome 16 of the human reference genome provided by [UCSC](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/).
+Besides the main FastA file, we provide the index file and the corresponding sequencing dictionary.
 
 **VariantSets**
-
+The folder contains VCF files serving as databases of known polymorphic sites required by the GATKRealignment and the GATKBaseRecalibration nodes.
+For more information see the [GATK documentation on known variants/sites](https://www.broadinstitute.org/gatk/guide/article?id=1247).
