@@ -8,7 +8,7 @@ For more description of the experiment see the [PubMed entry 24926665](http://ww
 - Homo_sapiens.GRCh37.75.chr16.gtf.gz: Annotation file needed for the FeatureCounts node.
 
 **Exome_VarCal**
-The folder contains the FastQ files which serve as input for the [KNIME4NGS\_Exome\_VarCal](https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_Exome_VarCal.zip) workflow.
+The folder contains the FastQ files which serve as input for the [KNIME4NGS\_Test\_VarCalling](https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_VarCalling.zip) workflow.
 The files have been generated based on the Platinum Genomes offered by Illumina.
 For more information visit the [Platinum Genomes website](http://www.illumina.com/platinumgenomes/) and for raw data see the [ENA entry ERP001960](http://www.ebi.ac.uk/ena/data/view/ERP001960).
 
