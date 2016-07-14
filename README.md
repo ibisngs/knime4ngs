@@ -5,7 +5,7 @@ Small sample datasets are provided for both workflows which allow you to execute
 
 The following descriptions of the workflows assume that you have downloaded KNIME and installed the KNIME4NGS extension as described in the [manual](https://github.com/ibisngs/knime4ngs/raw/gh-pages/knime4ngs_manual.pdf).
 Further, you have to download the provided [resource bundle](https://github.com/ibisngs/knime4ngs/archive/resource.zip) and extract and unzip all included files.
-We recommend to feed the KNIME4NGS preference page with the resource bundle [reference genome](https://github.com/ibisngs/knime4ngs/tree/resource/RefGenome) and [variant sets](https://github.com/ibisngs/knime4ngs/tree/resource/VariantSets) before importing the test workflows as it minimizes repetitive node configuration.
+We recommend to feed the KNIME4NGS preference page with the resource bundle [reference genome](https://github.com/ibisngs/knime4ngs/tree/resource/RefGenome), [variant sets](https://github.com/ibisngs/knime4ngs/tree/resource/VariantSets) and the respective execution binaries before importing the test workflows as it minimizes repetitive node configuration.
 Then, the provided workflows can easily be imported into KNIME via *Import KNIME Workflow...* in the *File* menu.
 
 ## Variant Calling
