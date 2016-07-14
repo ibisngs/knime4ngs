@@ -31,20 +31,14 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-<strong>Knime4NGS</strong> is a set of custom KNIME nodes, designed for processing large next generation sequencing datasets. The nodes wrap functionalities of popular command line tools like BWA, Samtools and GATK and allow an easy creation of comprehensive NGS KNIME workflows.
-
-
+	<p><strong>Knime4NGS</strong> is a set of custom KNIME nodes, designed for processing large next generation sequencing datasets.
+	The nodes wrap functionalities of popular command line tools like BWA, Samtools and GATK and allow an easy creation of comprehensive NGS KNIME workflows.</a>
+	
+	<p>Besides the following quick start guide, we provide a <a href="https://github.com/ibisngs/knime4ngs/raw/gh-pages/knime4ngs_manual.pdf">comprehensive documentation</a> including detailed descriptions and usage examples.</a>
 
 	<h2 id="QuickStart">Quick Start</h2>
 		<section>
-			<h3 class='nodent'>Download and Install Nodes</h3>
-				<p>You can download and install the KNIME4NGS nodes by specifying the KNIME4NGS Update Site within KNIME <strong>http://ibisngs.github.io/knime4ngs/updateSite</strong>.</p> 
-				<p>Add the new site using Help > Install New Software > Available Software Sites preference page.</p>
-				<p>Select the new Update Site. The IBIS KNIME Nodes should now appear. Select and install the displayed package. </p>
-				<p>After restarting KNIME, the KNIME4NGS nodes should appear in the KNIME Node Repository.</p>
-				
-
-				<h3 class='nodent'>Prerequisites</h3>
+			<h3 class='nodent'>Prerequisites</h3>
 				<ul type="square">
     					<li>Linux OS (required)</li>				 
 					<li><a href="https://www.knime.org/downloads/overview">KNIME or KNIME SDK</a>  (required)</li>	
@@ -59,69 +53,74 @@
 (for variant annotation, see Section 2.6) 3 VEP itself requires the following perl modules:
 Archive::Extract, Archive::Zip, Test::More, DBI and CGI</li>
 				</ul>
-
-				<h3 class='nodent'>Configuration (recommended)</h3>
+			<h3 class='nodent'>Download and Install Nodes</h3>
+				<p>You can download and install the KNIME4NGS nodes by specifying the KNIME4NGS Update Site as a software repository within KNIME.
+				In order to do that, go to:
+				<pre>Help &gt; Install New Software &gt; Add </pre>
+				and add <strong>http://ibisngs.github.io/knime4ngs/updateSite</strong> to the available software sites.
+				After selecting the new software site, the IBIS KNIME Nodes should appear. Select and install the displayed package.
+				After restarting KNIME, the KNIME4NGS nodes should appear in the KNIME Node Repository.</p>
+				
+			<h3 class='nodent'>Configuration (recommended)</h3>
 				Our nodes can be configured by using the KNIME4NGS preference page. Setting the required file paths will speed up workflow creation and node configuration.
 				The KNIME4NGS Preference Page can be found at:
-				<pre>File –> Preferences –> KNIME –> KNIME4NGS.</pre>
+				<pre>File &gt; Preferences &gt; KNIME &gt; KNIME4NGS</pre>
 				Missing binaries can be obtained by using ’Download missing binaries’ and/or search
 				for existing binaries in your file system. This step is necessary since most nodes
 				do not contain the respective execution binaries. Although binaries can be selected
 				in each node independently, setting global binary paths in the preference page is
 				recommended.
 
-				<h3 class='nodent'>Test Workflows</h3>
-				For testing the node functionalies, we provide two example workflows. A typical <a href="https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_VarCalling.zip"> Variant Calling worklflow </a> that covers all steps from initial quality control and read mapping up to variant filtration as well as a workflow for differential expression detection. The required raw data and resource files can be obtained <a href="https://github.com/ibisngs/knime4ngs/archive/resource.zip">here</a>. The workflows can be imported into KNIME by selecting: <pre>File –> Import KNIME Workflow...</pre>
+			<h3 class='nodent'>Test Workflows</h3>
+				For testing the node functionalities, we provide two example workflows.
+				A typical <a href="https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_VarCalling.zip"> variant calling workflow </a> that covers all steps from initial quality control and read mapping up to variant filtration as well as a workflow for <a href="https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_DiffExpression.zip">differential expression detection</a>.
+				The required raw data and resource files can be obtained <a href="https://github.com/ibisngs/knime4ngs/archive/resource.zip">here</a>.
+				The workflows can be imported into KNIME by selecting: <pre>File &gt; Import KNIME Workflow...</pre>
+A detailed description of how to configure the workflows is given in the corresponding <a href="https://github.com/ibisngs/knime4ngs/blob/master/README.md">README</a>.
 
-				<h3 class='nodent'>Documentation</h3>
+			<h3 class='nodent'>Documentation</h3>
 				A comprehensive documentaion including detailed descriptions and examples can be found <a href="https://github.com/ibisngs/knime4ngs/raw/gh-pages/knime4ngs_manual.pdf">here</a>.
       </section>
-
-
-
-
 	<h2 id="FAQs">FAQs</h2>
 	      	<section>
 			<ol type="1">
-
-<li> <p><strong>Which nodes can work on compressed input files?</strong></p>
-<p>–> Compatible with compressed FastQ files: FastQC, RawReadManipulator</p>
-<p>–> Compatible with compressed vcf files: VEP</p></li>
-
-<li> <p><strong>No active session error in parallel chunk environment.</strong></p>
-–> Reset parallel chunk start and re-execute.</p></li>
-
-<li> <p><strong>The node wont execute and always returns to "orange configure-state" without
-error message.</strong></p>
-<p>–> Reset the last successfully executed predecessor node and re-execute the nodes.</p></li>
-
-<li> <p><strong>Update has encountered a problem.</strong></p>
-–> Restart KNIME before updating.</p></li>
-
-<!--<li> <p><strong>GC overhead limit exceeded while running Picard node.</strong></p>
-–> Increase memory when starting KNIME using the knime.ini file e.g. by adding -Xmx8G</p></li>-->
-
-<li> <p><strong> Node is in EXECUTING state and cannot be canceled although it has been
-successfully executed on the cluster.</strong></p>
-<p>–> Go to the corresponding workflow folder in the knime-workspace. Edit the xml file of
-the executing node and replace EXECUTING by IDLE or CONFIGURED.</p></li>
-
-<li> <p><strong> VQSR: Unable to retrieve results.</strong></p>
-<p>–> Use VQSR in single-threaded mode (Threads 1).</p></li>
-
-<li> <p><strong> VQSR: No data found.</strong></p>
-<p>–> Reduce maximum number of Gaussians to 4.</p></li>
+				<li> 
+					<p><strong>Which nodes can work on compressed input files?</strong></p>
+					<p>&rArr; Compatible with compressed FastQ files: FastQC, RawReadManipulator</p>
+					<p>&rArr; Compatible with compressed vcf files: VEP</p>
+				</li>
+				<li>
+					<p><strong>No active session error in parallel chunk environment.</strong></p>
+					<p>&rArr; Reset parallel chunk start and re-execute.</p>
+				</li>
+				<li>
+					<p><strong>The node wont execute and always returns to "orange configure-state" without error message.</strong></p>
+					<p>&rArr; Reset the last successfully executed predecessor node and re-execute the nodes.</p>
+				</li>
+				<li> 
+					<p><strong>Update has encountered a problem.</strong></p>
+					<p>&rArr; Restart KNIME before updating.</p>
+				</li>
+				<li> 
+					<p><strong> Node is in EXECUTING state and cannot be canceled although it has been successfully executed on the cluster.</strong></p>
+					<p>&rArr; Go to the corresponding workflow folder in the knime-workspace. Edit the xml file of the executing node and replace EXECUTING by IDLE or CONFIGURED.</p>
+				</li>
+				<li>
+					<p><strong> VQSR: Unable to retrieve results.</strong></p>
+					<p>&rArr; Use VQSR in single-threaded mode (Threads 1).</p>
+				</li>
+				<li>
+					<p><strong> VQSR: No data found.</strong></p>
+					<p>&rArr; Reduce maximum number of Gaussians to 4.</p>
+				</li>
 			</ol>
                 </section>
 
 
-<h2 class='nodent'>Contact</h2>
+	<h2 class='nodent'>Contact</h2>
 	<section>
 		mail@mail.de
 	</section>
-
-
-
     </div>
 
     <!-- FOOTER  -->
@@ -131,8 +130,5 @@ the executing node and replace EXECUTING by IDLE or CONFIGURED.</p></li>
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-
-    
-
   </body>
 </html>
