@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Knime4NGS : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Knime4NGS</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+         <!-- <a id="forkme_banner" href="https://github.com/ibisngs/knime4ngs">View on GitHub</a> -->
+
+          <h1 id="project_title">Knime4NGS</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+            <!--  <a class="zip_download_link" href="https://github.com/ibisngs/knime4ngs/raw/master/resource-bundle.tar.gz">Download this project as a .zip file</a> -->
+              <!--<a class="tar_download_link" href="https://github.com/ibisngs/knime4ngs/tarball/master">Download this project as a tar.gz file</a> -->
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+	
+	<h2 id="FastQCmod">FastQCmod</h2>
+		<section>
+		FastQCmod is an extension to the great <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"> FastQC </a> (currently build on release v0.10.1).
+		The extension includes a logic to extract the analysis results of the
+		individual
+		FastQC analysis methods and write a more computer readable output,
+		to allow for a simplified reusal by e.g. RawReadManipulator.
+		Furtheron, in the light of the fact that CPU power is currently more
+		widely available
+		than I/O-Bandwidth, FastQCmod contains code for parallelization of the
+		analysis
+		of single fastq-files, compared to the per-sample/per-file
+		parallelization of the original
+		FastQC. A backport of recent FastQC versions to FastQCmod is in preparation.
+		The source-code of FastQCmod (based on FastQC v0.10.1) is available
+		under the GPLv3 license.
+	      </section>
+
+	<h2 id="RawReadManipulator">RawReadManipulator</h2>
+	      	<section>
+			The RawReadManipulator (RRM) is an in-house development of a modular, highly
+			parallelized filtering pipeline for raw reads.
+			The java application is easily extensible with new or custom
+			filtering-modules as necessary,
+			and makes use of the data-independence that reads (or read-pairs) have
+			towards each other.
+			All available filters have many available configuration options, such
+			that the most common filtering
+			needs should be met when using RRM.
+			Tests have shown the parallelization to be scaling well with the number
+			of CPUs given to the task,
+			with the bottleneck of available data-I/O-bandwith as the limiting
+			factor in terms of filtering-speed.
+                </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Knime4NGS maintained by <a href="https://github.com/ibisngs">ibisngs</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
