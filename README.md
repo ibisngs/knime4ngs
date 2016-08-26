@@ -5,22 +5,31 @@ Small sample datasets are provided for both workflows which allow you to execute
 
 The following descriptions of the workflows assume that you have downloaded KNIME and installed the KNIME4NGS extension as described in the [manual](https://github.com/ibisngs/knime4ngs/raw/gh-pages/knime4ngs_manual.pdf).
 Further, you have to download the provided [resource bundle](https://github.com/ibisngs/knime4ngs/archive/resource.zip) and extract and unzip all included files.
-We recommend to feed the KNIME4NGS preference page with the resource bundle [reference genome](https://github.com/ibisngs/knime4ngs/tree/resource/RefGenome), [variant sets](https://github.com/ibisngs/knime4ngs/tree/resource/VariantSets) and the respective execution binaries before importing the test workflows as it minimizes repetitive node configuration.
+We recommend to feed the KNIME4NGS preference page with the resource bundle including the [reference genome](https://github.com/ibisngs/knime4ngs/tree/resource/RefGenome), the [variant sets](https://github.com/ibisngs/knime4ngs/tree/resource/VariantSets) and the respective execution binaries before importing the test workflows as it minimizes repetitive node configuration. Most of the binaries are provided and can easily be integrated into the preference page by using the "Download missing binaries" button in the preference page.
 Then, the provided workflows can easily be imported into KNIME via *Import KNIME Workflow...* in the *File* menu.
 
 ## Variant Calling
 
-The [variant calling workflow](https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_VarCalling.zip) covers all steps from raw read quality assessment to variant annotation.
+The [variant calling workflow](https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_VarCalling.knwf) covers all steps from raw read quality assessment to variant annotation. The folowing tools are required for this workflow:
+* BWA
+* Samtools
+* Picard: [picard.jar] (https://broadinstitute.github.io/picard/)
+* GATK: [GATK.jar] (https://software.broadinstitute.org/gatk/download/)
+* SNPSift: [SNPSift] (http://snpeff.sourceforge.net/download.html)
+
+Binaries, which can't be directly downloaded by the "Download missing binaries" button in the preference page can be found through the the provided links.   
 
 ![](figures/VarCalling.png)
 
 Before executing the workflow, you have to open the node dialog of the **FileLoader** and select NA12877\_R1.fastq and NA12877\_R2.fastq in the folder [VarCalling](https://github.com/ibisngs/knime4ngs/tree/resource/VarCalling) of the resource bundle as the first and second fastQ input file.
-Then, the status lights of all nodes should change to yellow which indicates that you can execute the complete workflow now.
+
 
 ## Differential Expression
 
-The [differential expression workflow](https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_DiffExpression.zip) initially creates a genome index used for read alignment.
-Then, it iterates over RNA-seq data of 8 individuals, merges the read counts and uses the **DESeq** node to perform differential expression analysis.
+The [differential expression workflow](https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_DiffExpression.knwf) initially creates a genome index used for read alignment.
+Then, it iterates over RNA-seq data of 8 individuals, merges the read counts and uses the **DESeq** node to perform differential expression analysis. The following tools are required for this workflow:
+* STAR
+* FeatureCounts
 
 ![](figures/DiffExpression.png)
 
