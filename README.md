@@ -10,12 +10,12 @@ Then, the provided workflows can easily be imported into KNIME via *Import KNIME
 
 ## Variant Calling
 
-The [variant calling workflow](https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_VarCalling.knwf) covers all steps from raw read quality assessment to variant annotation. The folowing tools are required for this workflow:
+The [variant calling workflow](https://github.com/ibisngs/knime4ngs/raw/master/KNIME4NGS_Test_VarCalling.knwf) covers all steps from raw read quality assessment to variant annotation. The following tools are required for this workflow:
 * BWA
 * Samtools
-* Picard: [picard.jar] (https://broadinstitute.github.io/picard/)
-* GATK: [GATK.jar] (https://software.broadinstitute.org/gatk/download/)
-* SNPSift: [SNPSift] (http://snpeff.sourceforge.net/download.html)
+* [Picard] (https://broadinstitute.github.io/picard/)
+* [GATK] (https://software.broadinstitute.org/gatk/download/)
+* [SNPSift] (http://snpeff.sourceforge.net/download.html)
 
 Binaries, which can't be directly downloaded by the "Download missing binaries" button in the preference page can be found through the the provided links.   
 
@@ -30,6 +30,7 @@ The [differential expression workflow](https://github.com/ibisngs/knime4ngs/raw/
 Then, it iterates over RNA-seq data of 8 individuals, merges the read counts and uses the **DESeq** node to perform differential expression analysis. The following tools are required for this workflow:
 * STAR
 * FeatureCounts
+* [DESeq] (http://bioconductor.org/packages/release/bioc/html/DESeq.html)
 
 ![](figures/DiffExpression.png)
 
@@ -37,7 +38,7 @@ The upper **FileLoader** of the workflow has to be loaded with the fastA file of
 The lower FileLoader takes a [list of the fastQ files](https://github.com/ibisngs/knime4ngs/raw/resource/DiffExpression/diff_exp_fastq.list) as input.
 Then, set the path to the annotation file in the dialog of the **FeatureCounts** node which corresponds to the path to the file [Homo_sapiens.GRCh37.75.chr16.gtf](https://github.com/ibisngs/knime4ngs/blob/resource/DiffExpression/Homo_sapiens.GRCh37.75.chr16.gtf.gz) in your resources folder.
 Finally, you have to select the [sample_cond.tsv](https://github.com/ibisngs/knime4ngs/raw/resource/DiffExpression/sample_cond.tsv) using the **CSVReader** node.
-Although, the status lights of some nodes are still red you can now execute the workflow.
+
 
 
 
